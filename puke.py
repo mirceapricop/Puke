@@ -57,7 +57,10 @@ def main():
     count = 0
     if form.has_key('count'):
       count = int(form['count'].value)
-    generate_model(cfd, random.choice(text.split()), 0, count)
+    coverage = 0
+    if form.has_key('coverage'):
+      coverage = int(form['coverage'].value)
+    generate_model(cfd, random.choice(text.split()), coverage, count)
   print(".\n")
 
 main()
