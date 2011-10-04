@@ -36,7 +36,8 @@ class FreqDist:
     result = []
     for item in self.hash:
       if item[0] == w:
-        result.append(item[1])
+        for i in range(self.hash[item]):
+          result.append(item[1])
     return result
   
   def count(self, w, s):
